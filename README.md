@@ -3,8 +3,10 @@ Command-Finder
 
 Software tool for searching GNU / LINUX commands.
 
-This project involved in the OSL's contest and CUSL's contest.
+This project participates in the following contests:
+Certamen de Proyectos Libres de la UGR - http://osl.ugr.es/2014/09/26/premios-a-proyectos-libres-de-la-ugr/
+CUSL - http://www.concursosoftwarelibre.org/1415/?q=proyectos
 
+This project is under GNU GPL v3.
 
-http://osl.ugr.es/bases-de-los-premios-a-proyectos-libres-de-la-ugr/
-http://www.concursosoftwarelibre.org/1415/portada
+Project's blog: commandfinder.wordpress.com
