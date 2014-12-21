@@ -9,4 +9,4 @@ CUSL - http://www.concursosoftwarelibre.org/1415/?q=proyectos
 
 This project is under GNU GPL v3.
 
-Project's blog: commandfinder.wordpress.com
+Project's blog: https://commandfinder.wordpress.com/
