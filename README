@@ -11,3 +11,8 @@ This project is under GNU GPL v3.
 
 Project's blog: https://commandfinder.wordpress.com/
 Twitter's blog: https://twitter.com/CommandFinder
+
+==============
+Entorno de trabajo
+	Ruby-2.2.0
+	Gems: multimap
