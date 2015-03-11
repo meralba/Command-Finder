@@ -14,5 +14,5 @@ Twitter's blog: https://twitter.com/CommandFinder
 
 ==============
 Entorno de trabajo
-	Ruby-2.2.0
-	Gems: multimap
+	Ruby-1.9.1
+	Gems: multimap (1.1.3)

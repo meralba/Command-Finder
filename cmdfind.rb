@@ -1,6 +1,8 @@
+#!/usr/bin/env ruby
 #VERSION ALPHA
 #This project is under GNU GPL v3
 #author: MercAddons
+
 
 require 'multimap'
 
@@ -25,6 +27,7 @@ map["ficheros"]="chmod"
 map["ficheros"]="chown"
 map["ficheros"]="chgrp"
 map["eliminar"]="rm"
+map["eliminar"]="rmdir"
 map["borrar"]="rm"
 map["borrar"]="rmdir"
 map["crear"]="mkdir"
@@ -42,8 +45,16 @@ map["visualizar"]="cat"
 map["acceso"]="chmod"
 map["usuario"]="chown"
 map["grupo"]="chown"
-map["grupo"]="chagrp"
+map["grupo"]="chgrp"
 map["propietario"]="chown"
 map["pertenecer"]="chgrp"
 
-map
+
+puts "Buscar comando: "  
+STDOUT.flush  
+frase = gets.chomp  
+puts "Frase introducida: " + frase
+*claves=frase.split(" ")
+puts "Comandos: "
+puts map.values_at(*claves)
+
