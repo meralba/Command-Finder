@@ -49,12 +49,13 @@ map["grupo"]="chgrp"
 map["propietario"]="chown"
 map["pertenecer"]="chgrp"
 
-
+#Entrada del string
 puts "Buscar comando: "  
 STDOUT.flush  
 frase = gets.chomp  
-puts "Frase introducida: " + frase
-*claves=frase.split(" ")
+frase.downcase!			#Cambiar carácteres del string a minúsculas
+
+*claves=frase.split(" ")	#Separar el string por palabras
 *comandos=map.values_at(*claves)
 *separados=[]
 coincidencias=Hash.new
