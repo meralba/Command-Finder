@@ -72,9 +72,8 @@ end
 coincidencias=coincidencias.sort_by{|clave, valor| valor}
 coincidencias.reverse!
 puts "Coincidencias: "
-for m in coincidencias 
-	print m.first + "\n"
-end
+i=0
+coincidencias.each {|key, value| puts "#{key} - #{value}" }
 
 
 
