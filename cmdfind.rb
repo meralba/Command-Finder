@@ -5,14 +5,7 @@
 
 require 'sqlite3'
 
-
-#Entrada del string
-puts "Buscar comando: "  
-STDOUT.flush  
-frase = gets.chomp  
-frase.downcase!			#Cambiar carácteres del string a minúsculas
-
-*claves=frase.split(" ")	#Separar el string por palabras
+*claves=ARGV	#TODO <-- Hay que "sanitizar" las claves ants de aceptarlas
 
 *separados=[]
 coincidencias=Hash.new 0
