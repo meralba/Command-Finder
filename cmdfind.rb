@@ -1,11 +1,13 @@
 #!/usr/bin/env ruby
 #VERSION ALPHA
-#This project is under GNU GPL v3#author: MercAddons
-
+#This project is under GNU GPL v3
 
 require 'sqlite3'
 
 *claves=ARGV	#TODO <-- Hay que "sanitizar" las claves ants de aceptarlas
+if claves.count == 0
+	assert(false, "Necesita argumentos")
+end
 
 coincidencias=Hash.new 0
 
@@ -32,6 +34,6 @@ database.close if database
 
 coincidencias=coincidencias.sort_by{|clave, valor| valor}
 coincidencias.reverse!
-puts "Coincidencias: "
+#puts "Coincidencias: "
 
 coincidencias.each {|key, value| puts "#{key} - #{value}" }
