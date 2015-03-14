@@ -6,7 +6,7 @@ require 'sqlite3'
 
 *claves=ARGV	#TODO <-- Hay que "sanitizar" las claves ants de aceptarlas
 if claves.count == 0
-	assert(false, "Necesita argumentos")
+	raise "ERROR: Necesita argumentos"
 end
 
 coincidencias=Hash.new 0
@@ -35,5 +35,5 @@ database.close if database
 coincidencias=coincidencias.sort_by{|clave, valor| valor}
 coincidencias.reverse!
 #puts "Coincidencias: "
-
+system("ls -la")
 coincidencias.each {|key, value| puts "#{key} - #{value}" }
