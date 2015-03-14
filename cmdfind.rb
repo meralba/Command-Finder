@@ -35,5 +35,5 @@ database.close if database
 coincidencias=coincidencias.sort_by{|clave, valor| valor}
 coincidencias.reverse!
 #puts "Coincidencias: "
-system("ls -la")
+
 coincidencias.each {|key, value| puts "#{key} - #{value}" }
