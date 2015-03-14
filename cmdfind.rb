@@ -3,79 +3,35 @@
 #This project is under GNU GPL v3#author: MercAddons
 
 
-require 'multimap'
+require 'sqlite3'
 
-map=Multimap.new
-map["contenido"]="cat"
-map["contenido"]="ls"
-map["listar"]="ls"
-map["directorios"]="ls"
-map["directorios"]="cp"
-map["directorios"]="rm"
-map["directorios"]="mkdir"
-map["directorios"]="rmdir"
-map["directorios"]="chmod"
-map["directorios"]="chown"
-map["directorios"]="chgrp"
-map["copiar"]="cp"
-map["ficheros"]="cp"
-map["ficheros"]="rm"
-map["ficheros"]="mv"
-map["ficheros"]="cat"
-map["ficheros"]="chmod"
-map["ficheros"]="chown"
-map["ficheros"]="chgrp"
-map["eliminar"]="rm"
-map["eliminar"]="rmdir"
-map["borrar"]="rm"
-map["borrar"]="rmdir"
-map["crear"]="mkdir"
-map["mover"]="mv"
-map["renombrar"]="mv"
-map["cambiar"]="mv"
-map["cambiar"]="chmod"
-map["cambiar"]="chown"
-map["cambiar"]="chgrp"
-map["nombre"]="mv"
-map["mostrar"]="ls"
-map["mostrar"]="cat"
-map["concatenar"]="cat"
-map["visualizar"]="cat"
-map["acceso"]="chmod"
-map["usuario"]="chown"
-map["grupo"]="chown"
-map["grupo"]="chgrp"
-map["propietario"]="chown"
-map["pertenecer"]="chgrp"
+*claves=ARGV	#TODO <-- Hay que "sanitizar" las claves ants de aceptarlas
 
-#Entrada del string
-puts "Buscar comando: "  
-STDOUT.flush  
-frase = gets.chomp  
-frase.downcase!			#Cambiar carácteres del string a minúsculas
+coincidencias=Hash.new 0
 
-*claves=frase.split(" ")	#Separar el string por palabras
-*comandos=map.values_at(*claves)
-*separados=[]
-coincidencias=Hash.new
-i=0
+database = SQLite3::Database.new "cmdfind.db"
+database.results_as_hash = true
 
-comandos.each do |comando|
-	comando.each do |c|
-		separados.push(c)
-		i=i+1
-	end
-end
-separados.each do |comando|
-	coincidencias[comando]=separados.count(comando)
-end
+claves.each do |palabra|
+
+    stm = database.prepare "SELECT Code FROM Entries WHERE Term LIKE ?"
+
+    stm.bind_param 1, palabra
+
+    rs = stm.execute
+
+    while (row = rs.next) do
+        coincidencias[row['Code']]+=1
+    end
+
+    stm.close if stm
+
+end 
+
+database.close if database
+
 coincidencias=coincidencias.sort_by{|clave, valor| valor}
 coincidencias.reverse!
 puts "Coincidencias: "
-i=0
+
 coincidencias.each {|key, value| puts "#{key} - #{value}" }
-
-
-
-
-
