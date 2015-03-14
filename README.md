@@ -19,7 +19,7 @@ Entorno de trabajo
 	Gems: sqlite3 (1.3.10)
 
 $curl -L https://get.rvm.io | bash -s stable --ruby
-alsdkasldklasklda
+
 $source ~/.rvm/scripts/rvm
 $rvm requirements
 $rvm install 1.9.1
