@@ -35,5 +35,13 @@ database.close if database
 coincidencias=coincidencias.sort_by{|clave, valor| valor}
 coincidencias.reverse!
 #puts "Coincidencias: "
+i=0
+if claves[0] == "-r"
+	(0..4).each do |i|
+		puts coincidencias[i].join(" - ")
+	end
 
-coincidencias.each {|key, value| puts "#{key} - #{value}" }
+else
+	coincidencias.each {|key, value| puts "#{key} - #{value}" }
+	
+end
