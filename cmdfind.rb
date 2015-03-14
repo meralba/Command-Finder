@@ -7,9 +7,7 @@ require 'sqlite3'
 
 *claves=ARGV	#TODO <-- Hay que "sanitizar" las claves ants de aceptarlas
 
-*separados=[]
 coincidencias=Hash.new 0
-
 
 database = SQLite3::Database.new "cmdfind.db"
 database.results_as_hash = true
@@ -35,5 +33,5 @@ database.close if database
 coincidencias=coincidencias.sort_by{|clave, valor| valor}
 coincidencias.reverse!
 puts "Coincidencias: "
-i=0
+
 coincidencias.each {|key, value| puts "#{key} - #{value}" }
