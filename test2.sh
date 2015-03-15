@@ -2,8 +2,9 @@
 
 #$a= ./cmdfind.rb "borrar directorios"
 
-a= ./cmdfind.rb pertenecer
+a= `./cmdfind.rb pertenecer`;
 #a=`ls `; 
+echo $a
 b="chgrp - 1"
 echo $b
 if [ $a==$b]
