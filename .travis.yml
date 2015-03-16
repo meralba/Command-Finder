@@ -1,19 +1,19 @@
 language: ruby
 rvm:
-	- 1.9.1-p431
+   - 2.2.0
 	
 branches:
-	only:
-		- master
-		- development
+   only:
+      - master
+      - development
 
 before_install:
-	- gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-	- curl -L https://get.rvm.io | bash -s stable --ruby
-	- source ~/.rvm/scripts/rvm
-	- rvm requirements
-	- gem install sqlite3
-	- rvm use 2.2.0
-	- gem install rake
+   - gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+   - curl -L https://get.rvm.io | bash -s stable --ruby
+   - source ~/.rvm/scripts/rvm
+   - rvm requirements
+   - gem install sqlite3
+   - rvm use 2.2.0
+   - gem install rake
 
 script: bash test.sh
