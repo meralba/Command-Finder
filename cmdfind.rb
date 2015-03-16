@@ -39,7 +39,7 @@ i=0
 if claves[0] == "-r"
 	(0..4).each do |i|
 		puts coincidencias[i].join(" - ")
-	end
+	#end
 
 else
 	coincidencias.each {|key, value| puts "#{key} - #{value}" }
