@@ -12,7 +12,6 @@ before_install:
    - curl -L https://get.rvm.io | bash -s stable --ruby
    - source ~/.rvm/scripts/rvm
    - gem install sqlite3
-   - rvm use 2.2.0
    - gem install rake
 
 script: bash test.sh
