@@ -2,11 +2,15 @@
 
 require 'test/unit'
  
-class TestCmdFind < Test::Unit::TestCase
-  def test_cmd
-#assert_equal "chgrp", system("./cmdfind.rb pertenecer")
-	assert_equal 5,5
-  end
+#class TestCmdFind < Test::Unit::TestCase
+  #def test_cmd
+	meh= system("./cmdfind.rb pertenecer")
+ 	meh
+	if "chgrp - 1" == meh
+			puts "caca"
+		end
+	
+ # end
  
  
-end
+#end

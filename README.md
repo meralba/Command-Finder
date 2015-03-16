@@ -14,13 +14,13 @@ Twitter's blog: https://twitter.com/CommandFinder
 
 ==============
 Entorno de trabajo
-	Ruby-1.9.1
+	Ruby-2.2.0
 	Gems: sqlite3 (1.3.10)
 
 $curl -L https://get.rvm.io | bash -s stable --ruby
 $source ~/.rvm/scripts/rvm
 $rvm requirements
-$rvm install 1.9.1
-$rvm use 1.9.1
+$rvm install 2.2.0
+$rvm use 2.2.0
 $gems install sqlite3
 

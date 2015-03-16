@@ -1,2 +1,8 @@
-ruby '1.9.1'
-gem 'sqlite3'
+source :rubygems
+
+group :test do
+	gem 'sqlite3'
+	gem 'test-unit'
+	gem 'rake'
+end
+
